@@ -11,7 +11,17 @@ public class Lottotip {
     }
 
     public int tippAbgeben(int[] tipp, Date date){
-        return 0;
+        int rightTipp = 0;
+        int[] zahlen = lottozahlen.getLottozahlen(date);
+
+        for(int i:zahlen){
+            for(int y:tipp){
+                if(i==y){
+                    rightTipp++;
+                }
+            }
+        }
+        return rightTipp;
     }
 
 
